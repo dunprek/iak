@@ -16,7 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".ExampleActivity" />
+        <activity
+            android:name=".ClickingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".checkBox.ContohActivity"
+            android:exported="true" />
+        <activity
+            android:name=".quizz.QuizActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cleanIntent.FirstActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cleanIntent.LastActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

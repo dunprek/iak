@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etOne;
     EditText etTwo;
 
+
     TextView tvResult;
 
     int integerA;
