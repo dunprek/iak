@@ -11,6 +11,7 @@ import com.don.iak.R;
 public class FirstActivity extends AppCompatActivity {
 
     Button btnNext;
+    Button btnMiddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +19,21 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         btnNext = (Button) findViewById(R.id.btnNext);
+        btnMiddle = (Button) findViewById(R.id.btnMiddle);
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstActivity.this,LastActivity.class);
+                Intent intent = new Intent(FirstActivity.this, LastActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnMiddle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, MiddleActivity.class);
                 startActivity(intent);
                 finish();
             }

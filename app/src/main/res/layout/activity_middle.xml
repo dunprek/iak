@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.don.iak.cleanIntent.FirstActivity">
+    tools:context="com.don.iak.cleanIntent.MiddleActivity">
+
+    <TextView
+        android:text="AKTIVITY LAINNYA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnBack"
         android:text="NEXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
-    <Button
-        android:id="@+id/btnMiddle"
-        android:text="GO TO MIDDLE ACT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -33,6 +33,7 @@
         <activity
             android:name=".cleanIntent.LastActivity"
             android:exported="true" />
+        <activity android:name=".cleanIntent.MiddleActivity"></activity>
     </application>
 
 </manifest>
