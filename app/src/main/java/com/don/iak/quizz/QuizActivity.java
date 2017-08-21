@@ -16,9 +16,11 @@ import com.don.iak.R;
 
 public class QuizActivity extends AppCompatActivity {
 
+    //set Tag logging
     private static final String MY_TAG = QuizActivity.class.getSimpleName();
 
 
+    //get required data from this class
     QuestionLists questionLists = new QuestionLists();
 
 
@@ -55,13 +57,17 @@ public class QuizActivity extends AppCompatActivity {
 
         updateQuestion();
 
+
+        //button go to next question
         btnNext = (Button) findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //get ID from selected radio button
                 selectedId = rGroup.getCheckedRadioButtonId();
 
-
+                //rb_one
                 if (selectedId == rbOne.getId()) {
                     if (rbOne.getText().toString().equals(mAnswer)) {
                         mScore = mScore + 1;
@@ -71,6 +77,8 @@ public class QuizActivity extends AppCompatActivity {
                     } else if (mQuestionNumber < 5) {
                         updateQuestion();
                     }
+
+                    //rb_two
                 } else if (selectedId == rbTwo.getId()) {
                     if (rbTwo.getText().toString().equals(mAnswer)) {
                         mScore = mScore + 1;
@@ -80,6 +88,8 @@ public class QuizActivity extends AppCompatActivity {
                     } else if (mQuestionNumber < 5) {
                         updateQuestion();
                     }
+
+                    //rb_three
                 } else if (selectedId == rbThree.getId()) {
                     if (rbThree.getText().toString().equals(mAnswer)) {
                         mScore = mScore + 1;
@@ -89,6 +99,8 @@ public class QuizActivity extends AppCompatActivity {
                     } else if (mQuestionNumber < 5) {
                         updateQuestion();
                     }
+
+                    //none selected
                 } else {
                     Toast.makeText(QuizActivity.this, "Mohon pilih salah satu", Toast.LENGTH_LONG).show();
                 }
@@ -98,6 +110,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
+    //get required questions, options
     private void updateQuestion() {
         tvQuestion.setText(questionLists.getQuestion(mQuestionNumber));
         rbOne.setText(questionLists.getOption1(mQuestionNumber));
@@ -107,8 +120,13 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionNumber++;
     }
 
+
+    /*
+    method for updating required value
+     */
     private void scoreResult(int point) {
 
+        //show builder
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Selamat Anda Mendapatkan Nilai " + mScore)
                 .setTitle("Waaaowww")
@@ -119,9 +137,7 @@ public class QuizActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-
         builder.show();
-
     }
 
 
